@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { Worker } from "bullmq";
 import redisConfig from "./config/redis";
 import * as queues from "./queues";
