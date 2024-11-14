@@ -6,3 +6,4 @@
 2. bullboard-implemented-to-bullmq
 3. file-structure-implemented
 4. separate-function-for-queues
+5. template
