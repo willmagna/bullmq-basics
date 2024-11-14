@@ -38,7 +38,7 @@ Run both parallel
 
     yarn run dev
 
-You can run worker in a separate project like another server in production. Go to https://github.com/willmagna/bullmq-worker and
+You can run worker in a separate project like another server in production. Go to https://github.com/willmagna/bullmq-worker and run the project locally
 
 ### Run the project in Docker Container
 
