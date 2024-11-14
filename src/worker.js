@@ -6,6 +6,7 @@ const workerList = Object.values(queues).map((queue) => ({
   instance: new Worker(queue.name, queue.job, {
     connection: redisConfig,
     autorun: false, // Should not execute when instatiante
+    limiter: queue.limiter,
   }),
 }));
 

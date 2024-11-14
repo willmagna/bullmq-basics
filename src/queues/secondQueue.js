@@ -5,4 +5,8 @@ export default {
     console.log("jobName:", job.name);
     console.log("jobData:", job.data);
   },
+  limiter: {
+    max: 1,
+    duration: 5000,
+  },
 };
