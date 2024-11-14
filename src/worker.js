@@ -21,4 +21,7 @@ workerList.forEach((worker) => {
   worker.instance.on("completed", (job, returnvalue) => {
     console.log(`JOB COMPLETED: ${job.id} - ${job.name} has completed!`);
   });
+  worker.instance.on("error", (err) => {
+    console.log(`WORKER ERROR: ${err}`);
+  });
 });

@@ -7,6 +7,6 @@ export default {
   },
   limiter: {
     max: 1,
-    duration: 5000,
+    duration: 1000,
   },
 };

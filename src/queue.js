@@ -7,6 +7,12 @@ const queueList = Object.values(queues).map((queue) => ({
   queueName: queue.name,
 }));
 
+queueList.forEach((queue) => {
+  queue.instance.on("error", (err) => {
+    console.log(`QUEUE ERROR: ${err}`);
+  });
+});
+
 export default {
   queueList,
   add(queueName, ...data) {
