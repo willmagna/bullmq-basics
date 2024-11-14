@@ -1,7 +1,8 @@
 import { Queue } from "bullmq";
 import redisConfig from "./config/redis";
+import firstQueue from "./jobs/firstQueue";
 
-const queue = new Queue("myFirstQueue", {
+const queue = new Queue(firstQueue.queueName, {
   connection: redisConfig,
 });
 
