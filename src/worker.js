@@ -25,4 +25,7 @@ workerList.forEach((worker) => {
   worker.instance.on("error", (err) => {
     console.log(`WORKER ERROR: ${err}`);
   });
+  worker.instance.on("ioredis:close", (err) => {
+    console.log(`WORKER IOREDIS CLOSE: ${err}`);
+  });
 });
