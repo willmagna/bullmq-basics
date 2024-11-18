@@ -10,6 +10,7 @@ function routes(app) {
     );
     res.send({ msg: "root route" });
   });
+
   app.get("/second-queue", async (req, res) => {
     await Queue.add("mySecondQueue", "myFirstJob - SecondQueue", {
       foo: "xyz",
