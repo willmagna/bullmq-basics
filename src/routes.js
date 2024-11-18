@@ -15,10 +15,25 @@ function routes(app) {
     await Queue.add("mySecondQueue", "myFirstJob - SecondQueue", {
       foo: "xyz",
     });
-    await Queue.add("mySecondQueue", "mySecondJob - SecondQueue", {
-      foo: "xyz",
-    });
+
     res.send({ msg: "root route" });
+  });
+
+  app.get("/scheduler", async (req, res) => {
+    await Queue.upsertJobScheduler(
+      "myFirstQueue",
+      "cronExpressionTest",
+      {
+        pattern: "* * * * *",
+      },
+      { name: "cron-job", data: { fromCronJob: "Jobbbb" }, opts: {} }
+    );
+    res.send({ msg: "CronJob" });
+  });
+
+  app.get("/remove-scheduler", async (req, res) => {
+    await Queue.removeJobScheduler("myFirstQueue", "cronExpressionTest");
+    res.send({ msg: "RemoveCronJob" });
   });
 }
 
