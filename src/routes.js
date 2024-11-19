@@ -16,6 +16,7 @@ function routes(app) {
       foo: "xyz",
     });
 
+    console.log(await Queue.getJobs("myFirstQueue", "cronExpressionTest"));
     res.send({ msg: "root route" });
   });
 
@@ -28,6 +29,8 @@ function routes(app) {
       },
       { name: "cron-job", data: { fromCronJob: "Jobbbb" }, opts: {} }
     );
+
+    console.log(await Queue.getJobs("myFirstQueue", "cronExpressionTest"));
     res.send({ msg: "CronJob" });
   });
 
