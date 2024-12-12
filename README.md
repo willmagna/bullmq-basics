@@ -1,11 +1,5 @@
 # bullmq-basics
 
-### Oficial Documentation and Github Repo
-
-https://docs.bullmq.io/
-
-https://github.com/taskforcesh/bullmq
-
 ### Branches order implementation
 
 1. basics
